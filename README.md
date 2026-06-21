@@ -81,7 +81,7 @@
     "TELEGRAM_CHAT_ID": "",
     "SLEEP_GAP": "5",
     "USE_CONCURRENT": "False",
-    "USE_TIME_RATE": "True"
+    "USE_TIME_RATE": "False"
   }
   ```
 
@@ -99,7 +99,7 @@
   | TELEGRAM_CHAT_ID        | 设置telegram的chatId，需要同时配置TELEGRAM_BOT_TOKEN，否则无法执行推送。关于这两个值如何获取，请前往官网查看。                                        |
   | SLEEP_GAP               | 多账号执行间隔，单位秒，如果账号比较多可以设置的短一点，默认为5秒                                                                              |
   | USE_CONCURRENT          | 是否使用多线程，实验性功能，未测试是否有效。账号多的可以试试，将它设置为True即可，启用后 `SLEEP_GAP` 将不再生效                                               |
-  | USE_TIME_RATE           | 是否按北京时间渐进增加步数范围，默认True。设为False后每次执行直接使用MIN_STEP~MAX_STEP，配合CRON_HOURS=0可一天只跑一次并刷到目标步数                              |
+  | USE_TIME_RATE           | 是否按北京时间渐进增加步数范围，默认False。设为true后步数随当天时间线性增加，22点达到MIN_STEP~MAX_STEP最大值                              |
 
 ### 三、多账户设置(如用不上请忽略)
 

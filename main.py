@@ -33,7 +33,7 @@ def get_bool_value_default(_config: dict, _key, default=False):
 def get_min_max_by_time(hour=None, minute=None):
     min_step = get_int_value_default(config, 'MIN_STEP', 18000)
     max_step = get_int_value_default(config, 'MAX_STEP', 25000)
-    if not get_bool_value_default(config, 'USE_TIME_RATE', True):
+    if not get_bool_value_default(config, 'USE_TIME_RATE', False):
         return min_step, max_step
     if hour is None:
         hour = time_bj.hour
